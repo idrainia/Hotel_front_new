@@ -297,7 +297,7 @@ h1 {
 }
 
 .about p {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .about button {
@@ -373,6 +373,10 @@ h1 {
   font-size: 15px;
   font-weight: 400;
   color: #000;
+}
+
+.rooms button{
+  padding: 13px 17px;
 }
 
 .owl-carousel1 .owl-nav .owl-prev,
