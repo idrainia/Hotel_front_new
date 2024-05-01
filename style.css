@@ -39,19 +39,19 @@ button {
   outline: none;
   transition: 0.5s;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .primary-btn {
   padding: 15px 40px;
-  background: #7fc142;
+  background: #f6bb15;
   font-weight: bold;
   color: white;
 }
 
 .secondary-btn {
   padding: 15px 40px;
-  background: none;
-  border: 2px solid white;
+  background: #7fc142;
   font-weight: bold;
   color: white;
 }
@@ -66,10 +66,13 @@ header {
   height: 10vh;
   line-height: 10vh;
   padding: 0 20px;
+  background: #1e1e2a
+  
 }
 
 header img {
-  margin: 20px 0;
+  margin: 5px 0;
+  width: 50%;
 }
 
 header ul {
@@ -82,7 +85,7 @@ header ul li {
 }
 
 header ul li a {
-  color: #000;
+  color: #b6b7b9;
   margin: 0 10px;
   transition: 0.5s;
 }
@@ -103,7 +106,7 @@ header .navlinks span {
   display: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:932px) {
   header ul {
     position: absolute;
     top: 100px;
@@ -206,7 +209,7 @@ input {
 
 .book {
   padding: 40px 0;
-  background: #282834;
+  background: #1e1e2a;
   color: #fff;
 }
 
@@ -222,6 +225,15 @@ h1 {
 .book input {
   font-family: serif;
   padding: 20px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.book select {
+  font-family: serif;
+  padding: 20px 20px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .book button {
@@ -229,6 +241,7 @@ h1 {
   background-color: #7fc142;
   color: #fff;
   border: none;
+  font-weight: bold;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -270,6 +283,11 @@ h1 {
   top: 55px;
 }
 
+.about img {
+  margin: 5px 0;
+  width: 120%;
+}
+
 .about {
   position: relative;
 }
@@ -290,7 +308,7 @@ h1 {
 /*--------counter---------*/
 .counter {
   background: 
-		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+		linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
 		url("../images/background-1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -333,7 +351,7 @@ h1 {
 
 .rooms i {
   font-size: 12px;
-  color: #fbb234;
+  color: #7fc142;
   margin: 15px 0;
   margin-right: 5px;
 }
@@ -383,7 +401,7 @@ h1 {
 
 /*--------footer---------*/
 footer {
-  background: #282834;
+  background: #1e1e2a;
   color: #b6b7b9;
   padding: 10% 0 5% 0;
 }
@@ -398,46 +416,30 @@ footer p {
   line-height: 25px;
 }
 
-footer .icon i {
-  margin: 20px 20px 20px 0;
-  color: #b6b7b9;
-}
-
 footer h2 {
   color: #fff;
   margin-bottom: 10px;
 }
 
-footer li {
-  margin-bottom: 20px;
-}
-
 footer i {
   color: #7fc142;
-  margin: 20px 0;
+  margin: 20px 0px;
   margin-right: 20px;
 }
 
 footer label {
-  margin: 20px 0;
-}
-
-.legal {
-  padding: 15px 0;
-  background: #282834;
-  color: #b6b7b9;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 20px 0px;
 }
 
 /*--------footer---------*/
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:932px) {
   .home {
     color: #fff;
     height: 50vh;
   }
 
   .home img {
-    width: 100%;
+    width: 80%;
     height: 50vh;
   }
 
@@ -495,45 +497,6 @@ footer label {
   .owl-carousel2 .owl-dots {
     bottom: 0;
     left: 44.5%;
-  }
-
-  .news .content.flex {
-    flex-direction: column;
-  }
-
-  .news .left {
-    padding: 30px 0;
-    width: 100%;
-  }
-
-  .news .right {
-    width: 100%;
-  }
-
-  .newsletter {
-    position: relative;
-    background: #7fc142;
-  }
-
-  .newsletter .container {
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 40px 30px;
-    position: relative;
-  }
-
-  .newsletter .flex_space {
-    flex-direction: column;
-  }
-
-  .newsletter input:nth-last-child(2) {
-    margin: 20px 0;
-    width: 100%;
-  }
-
-  .newsletter input:nth-last-child(1) {
-    margin: 0;
   }
 
   footer .grid {
