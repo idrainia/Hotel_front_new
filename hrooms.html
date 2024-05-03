@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Номера</title>
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">  
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="style.css">
+
+   <!-- custom js file link  -->
+   <script src="script.js" defer></script>
+
+</head>
+<body>
+
+<header>
+    <div class="content flex_space">
+      <div class="logo">
+        <img src="images/logo2.png" alt="">
+      </div>
+      <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="index.html">Главная</a> </li>
+          <li><a href="hrooms.html">Номера</a> </li>
+          <a href="avtorisation.htm">
+            <li> <button class="primary-btn">ВОЙТИ</button> </a> </li>
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div>
+  </header>
+
+
+  <script>
+    var menulist = document.getElementById('menulist');
+    menulist.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (menulist.style.maxHeight == "0px") {
+        menulist.style.maxHeight = "100vh";
+      } else {
+        menulist.style.maxHeight = "0px";
+      }
+    }
+  </script>
+
+<div class="headflex">
+   <div class="heading">
+     <h1>Номера нашего отеля</h1>
+   </div>
+</div>   
+   
+<section class="book">
+   <div class="container flex_space">
+     <div class="text">
+       <h1>Выберите даты </h1>
+     </div>
+     <div class="form">
+       <form class="grid">
+           <input type="text" id="date-range" name="date-range" >
+           <input type="number" placeholder="Количество гостей" min="1" max="4" >
+           <select id="room-type" placeholder="Category" required>
+               <option value="" disabled selected hidden> Категория</option>
+               <option value="standard"> Сьют</option>
+               <option value="deluxe"> Апартамент</option>
+               <option value="suite"> Люкс</option>
+               <option value="suite"> Студия</option>
+               <option value="suite"> Джуниор сьют</option>
+           </select>
+           <button type="submit">ПРОВЕРИТЬ НАЛИЧИЕ</button>
+       </form>
+     </div>
+   </div>
+ </section>
+ <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/moment/moment.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+   <script>
+     $(function() {
+         $('#date-range').daterangepicker({
+             opens: 'left', // Adjust as needed
+             minDate: new Date(), // Set minimum date to today
+             startDate: new Date(), // Set initial start date to today
+             endDate: new Date().addDays(1), // Set initial end date to tomorrow
+         });
+     });
+     
+     // Helper function to add days to a date
+     Date.prototype.addDays = function(days) {
+         var date = new Date(this.valueOf());
+         date.setDate(date.getDate() + days);
+         return date;
+     };
+   </script>
+
+
+
+<div class="container">
+
+   <div class="hrooms-container">
+
+
+      <div class="hrooms" data-name="p-1">
+         <img src="images/room-1.jpg" alt="">
+         <h2>Солнечный Уголок</h2>
+         <div class="price">18000₽</div>
+      </div>
+
+      <div class="hrooms" data-name="p-2">
+         <img src="images/room-2.jpg" alt="">
+         <h2>Оазис Спокойствия</h2>
+         <div class="price">15000₽</div>
+      </div>
+
+      <div class="hrooms" data-name="p-3">
+         <img src="images/room-3.jpg" alt="">
+         <h2>Горный Воздух</h2>
+         <div class="price">15000₽</div>
+      </div>
+
+      <div class="hrooms" data-name="p-4">
+         <img src="images/room-4.jpg" alt="">
+         <h2>Джазовая Симфония</h2>
+         <div class="price">25000₽</div>
+      </div>
+
+      <div class="hrooms" data-name="p-5">
+         <img src="images/room-5.jpg" alt="">
+         <h2>Лунный Закат</h2>
+         <div class="price">40000₽</div>
+      </div>
+
+      <div class="hrooms" data-name="p-6">
+         <img src="images/room-6.jpg" alt="">
+         <h2>Цветочные Просторы</h2>
+         <div class="price">12000₽</div>
+      </div>
+
+      <div class="hrooms" data-name="p-7">
+         <img src="images/room-7.jpg" alt="">
+         <h2>Красный бархат</h2>
+         <div class="price">20000₽</div>
+      </div>
+
+      <div class="hrooms" data-name="p-8">
+         <img src="images/room-8.jpg" alt="">
+         <h2>Хай-Тек Ретро</h2>
+         <div class="price">60000₽</div>
+      </div>
+
+   </div>
+
+</div>
+
+<div class="hrooms-preview">
+
+   <div class="preview" data-target="p-1">
+      <i class="fas fa-times"></i>
+      <img src="images/room-1.jpg" alt="">
+      <h2>Солнечный Уголок</h2>
+      <div class="stars">
+         <i class="fa fa-user"></i>
+         <i class="fa fa-user"></i>
+      </div>
+      <p>Идеальное место для отдыха вдвоем в студии с прекрасным видом.</p>
+      <div class="button flex">
+         <button class="primary-btn">ЗАБРОНИРОВАТЬ</button>
+         <h3>18000₽<span> <br> За ночь </span> </h3>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-2">
+      <i class="fas fa-times"></i>
+      <img src="images/room-2.jpg" alt="">
+      <h2>Оазис Спокойствия</h2>
+      <div class="stars">
+         <i class="fa fa-user"></i>
+      </div>
+      <p>Прекрасное место чтобы провести время с самим собой.</p>
+      <div class="button flex">
+         <button class="primary-btn">ЗАБРОНИРОВАТЬ</button>
+         <h3>15000₽ <span> <br> За ночь </span> </h3>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-3">
+      <i class="fas fa-times"></i>
+      <img src="images/room-3.jpg" alt="">
+      <h2>Горный Воздух</h2>
+      <div class="stars">
+         <i class="fa fa-user"></i>
+                <i class="fa fa-user"></i>
+                <i class="fa fa-user"></i>
+      </div>
+      <p>Просторный номер с прекрасным видом на природу.</p>
+      <div class="button flex">
+         <button class="primary-btn">ЗАБРОНИРОВАТЬ</button>
+         <h3>15000₽ <span> <br> За ночь </span> </h3>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-4">
+      <i class="fas fa-times"></i>
+      <img src="images/room-4.jpg" alt="">
+      <h2>Джазовая Симфония</h2>
+      <div class="stars">
+         <i class="fa fa-user"></i>
+         <i class="fa fa-user"></i>
+      </div>
+      <p>Роскошные апартаменты, где вы сможете полностью расслабиться.</p>
+      <div class="button flex">
+         <button class="primary-btn">ЗАБРОНИРОВАТЬ</button>
+         <h3>25000₽<span> <br> За ночь </span> </h3>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-5">
+      <i class="fas fa-times"></i>
+      <img src="images/room-5.jpg" alt="">
+      <h2>Лунный Закат</h2>
+      <div class="stars">
+         <i class="fa fa-user"></i>
+         <i class="fa fa-user"></i>
+         <i class="fa fa-user"></i>
+      </div>
+      <p>Проведите свой отдых, наслаждаясь отдыхом в бассейне и на терассе под лучами солнца.</p>
+      <div class="button flex">
+         <button class="primary-btn">ЗАБРОНИРОВАТЬ</button>
+         <h3>40000₽<span> <br> За ночь </span> </h3>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-6">
+      <i class="fas fa-times"></i>
+      <img src="images/room-6.jpg" alt="">
+      <h2>Цветочные Просторы</h2>
+      <div class="stars">
+         <i class="fa fa-user"></i>
+      </div>
+      <p>Уютный и комфортный номер идеально подойдёт для вашего отдыха.</p>
+      <div class="button flex">
+         <button class="primary-btn">ЗАБРОНИРОВАТЬ</button>
+         <h3>12000₽<span> <br> За ночь </span> </h3>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-7">
+      <i class="fas fa-times"></i>
+      <img src="images/room-7.jpg" alt="">
+      <h2>Красный бархат</h2>
+      <div class="stars">
+         <i class="fa fa-user"></i>
+         <i class="fa fa-user"></i>
+      </div>
+      <p>Место чтобы ощутить по-настоящему королевский отдых.</p>
+      <div class="button flex">
+         <button class="primary-btn">ЗАБРОНИРОВАТЬ</button>
+         <h3>20000₽<span> <br> За ночь </span> </h3>
+      </div>
+   </div>
+
+   <div class="preview" data-target="p-8">
+      <i class="fas fa-times"></i>
+      <img src="images/room-8.jpg" alt="">
+      <h2>Хай-Тек Ретро</h2>
+      <div class="stars">
+         <i class="fa fa-user"></i>
+         <i class="fa fa-user"></i>
+         <i class="fa fa-user"></i>
+         <i class="fa fa-user"></i>
+      </div>
+      <p>Просторный и современный номер для большой семьи.</p>
+      <div class="button flex">
+         <button class="primary-btn">ЗАБРОНИРОВАТЬ</button>
+         <h3>60000₽<span> <br> За ночь </span> </h3>
+      </div>
+   </div>
+
+</div>
+
+<footer>
+   <div class="container grid">
+     <div class="box">
+       <img src="images/logo2.png" alt="">
+       <p>Приезжайте в наш отель и окунитесь в уют атмосферы комфорта и роскоши.</p>
+       Здесь каждый момент превращается в незабываемый опыт благодаря нашему внимательному обслуживанию, изысканной кухне и роскошным номерам.</p>
+       Разрешите себе отдохнуть и насладиться неповторимой атмосферой.</p>
+     </div>
+
+     <div class="box">
+       <h2>Связаться с нами</h2>
+       <p>Напишите нам на почту или позвоните по телефону.
+       </p>
+       <i class="fa fa-location-dot"></i>
+       <label>Улица Винченцо Маджио, строение 5, Неаполь, Италия</label> <br>
+       <i class="fa fa-phone"></i>
+       <label>+39 333 3333333</label> <br>
+       <i class="fa fa-envelope"></i>
+       <label>imperialnights@gmail.com</label> <br>
+     </div>
+   </div>
+ </footer>
+ <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

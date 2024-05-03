@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Личный кабинет</h1>
+        
+        <div class="user-info">
+            <h2>Информация о пользователе</h2>
+            <p>Имя: Иван</p>
+            <p>Фамилия: Иванов</p>
+            <p>Логин: ivanov123</p>
+            <p>
+                Телефон: +7 (123) 456-78-90 
+                <button onclick="toggleForm('phoneForm')">Изменить</button>
+            </p>
+            <form id="phoneForm" class="edit-form" onsubmit="submitForm(event, 'phoneForm')">
+                <input type="text" placeholder="Новый номер телефона">
+                <button type="submit">Сохранить</button>
+            </form>
+
+            <p>
+                Email: ivanov@example.com 
+                <button onclick="toggleForm('emailForm')">Изменить</button>
+            </p>
+            <form id="emailForm" class="edit-form" onsubmit="submitForm(event, 'emailForm')">
+                <input type="email" placeholder="Новый email">
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+
+        <div class="password-section">
+            <h2>Безопасность</h2>
+            <button onclick="toggleForm('passwordForm')">Изменить пароль</button>
+            <form id="passwordForm" class="edit-form" onsubmit="submitForm(event, 'passwordForm')">
+                <input type="password" placeholder="Новый пароль">
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+
+        <div class="reservations">
+            <h2>Ваши бронирования</h2>
+            <p>Здесь будут отображаться все ваши бронирования.</p>
+            <!-- Здесь можно вставить динамический контент -->
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formId) {
+            const form = document.getElementById(formId);
+            form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
+        }
+
+        function submitForm(event, formId) {
+            event.preventDefault();
+            const form = document.getElementById(formId);
+            // Добавьте логику обработки данных здесь, если нужно
+            alert('Данные сохранены');
+            form.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

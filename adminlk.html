@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Личный кабинет</h1>
+
+        <div class="profile">
+            <!-- Это место для вставки картинки профиля -->
+            <div class="profile-picture">
+                <img src="profile-pic-placeholder.png" alt="Фото профиля">
+            </div>
+
+            <div class="user-info">
+                <h2>Информация о пользователе</h2>
+                <p>Имя: Иван <button onclick="toggleForm('nameForm')">Изменить</button></p>
+                <form id="nameForm" class="edit-form" onsubmit="submitForm(event, 'nameForm')">
+                    <input type="text" placeholder="Новое имя">
+                    <button type="submit">Сохранить</button>
+                </form>
+                
+                <p>Фамилия: Иванов <button onclick="toggleForm('surnameForm')">Изменить</button></п>
+                <form id="surnameForm" class="edit-form" onsubmit="submitForm(event, 'surnameForm')">
+                    <input type="text" placeholder="Новая фамилия">
+                    <button type="submit">Сохранить</button>
+                </form>
+
+                <p>Логин: ivanov123</p>
+                <p>Должность: Инженер</п>
+
+                <p>Телефон: +7 (123) 456-78-90 <button onclick="toggleForm('phoneForm')">Изменить</button></п>
+                <form id="phoneForm" class="edit-form" onsubmit="submitForm(event, 'phoneForm')">
+                    <input type="text" placeholder="Новый номер телефона">
+                    <button type="submit">Сохранить</button>
+                </form>
+
+                <p>Email: ivanov@example.com <button onclick="toggleForm('emailForm')">Изменить</button></п>
+                <form id="emailForm" class="edit-form" onsubmit="submitForm(event, 'emailForm')">
+                    <input type="email" placeholder="Новый email">
+                    <button type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="password-section">
+            <h2>Безопасность</h2>
+            <button onclick="toggleForm('passwordForm')">Изменить пароль</button>
+            <form id="passwordForm" class="edit-form" onsubmit="submitForm(event, 'passwordForm')">
+                <input type="password" placeholder="Новый пароль">
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+
+        <div class="reservations">
+            <h2>Ваши бронирования</h2>
+            <div class="reservation">
+                <p>Бронь 1</p>
+                <label>
+                    <input type="checkbox"> Оплачено
+                </label>
+                <select>
+                    <option>В ожидании</option>
+                    <option>Заселился</option>
+                    <option>Выселился</option>
+                </select>
+                <button onclick="saveReservation('reservation1')">Сохранить</button>
+            </div>
+            <div class="reservation">
+                <p>Бронь 2</p>
+                <label>
+                    <input type="checkbox"> Оплачено
+                </label>
+                <select>
+                    <option>В ожидании</option>
+                    <option>Заселился</option>
+                    <option>Выселился</option>
+                </select>
+                <button onclick="saveReservation('reservation2')">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formId) {
+            const form = document.getElementById(formId);
+            form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
+        }
+
+        function submitForm(event, formId) {
+            event.preventDefault();
+            alert("Данные сохранены");
+            const form = document.getElementById(formId);
+            form.style.display = 'none';
+        }
+
+        function saveReservation(reservationId) {
+            alert("Бронирование " + reservationId + " сохранено.");
+        }
+    </script>
+</body>
+</html>
