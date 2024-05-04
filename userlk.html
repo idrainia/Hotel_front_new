@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Личный кабинет</title>
-    <link rel="stylesheet" href="st.css">
+    <title>Личный кабинет пользователя</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class = "lk">
     <div class="container">
         <h1>Личный кабинет</h1>
         
@@ -14,6 +14,7 @@
             <p>Имя: Иван</p>
             <p>Фамилия: Иванов</p>
             <p>Логин: ivanov123</p>
+    
             <p>
                 Телефон: +7 (123) 456-78-90 
                 <button onclick="toggleForm('phoneForm')">Изменить</button>
@@ -22,13 +23,12 @@
                 <input type="text" placeholder="Новый номер телефона">
                 <button type="submit">Сохранить</button>
             </form>
-
             <p>
-                Email: ivanov@example.com 
+                Электронная почта: ivanov@example.com 
                 <button onclick="toggleForm('emailForm')">Изменить</button>
             </p>
             <form id="emailForm" class="edit-form" onsubmit="submitForm(event, 'emailForm')">
-                <input type="email" placeholder="Новый email">
+                <input type="text" placeholder="Новая электронная почта">
                 <button type="submit">Сохранить</button>
             </form>
         </div>
@@ -45,7 +45,6 @@
         <div class="reservations">
             <h2>Ваши бронирования</h2>
             <p>Здесь будут отображаться все ваши бронирования.</p>
-            <!-- Здесь можно вставить динамический контент -->
         </div>
     </div>
 
@@ -58,7 +57,6 @@
         function submitForm(event, formId) {
             event.preventDefault();
             const form = document.getElementById(formId);
-            // Добавьте логику обработки данных здесь, если нужно
             alert('Данные сохранены');
             form.style.display = 'none';
         }

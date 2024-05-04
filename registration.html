@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script2.js" defer></script>
 </head>
 <body class="registration">
     <div class="wrapper">
         <h1>Выберите тип пользователя</h1>
         <div class="role-selection">
             <button id="admin-btn" class="role-btn">Я администратор</button>
-            <button id="client-btn" class="role-btn">Я клиент</button>
+            <button id="client-btn" class="role-btn">Я пользователь</button>
         </div>
         <div id="admin-form" class="form-container" style="display: none;">
             <h2>Регистрация администратора</h2>
@@ -53,7 +52,7 @@
         </div>
 
         <div id="client-form" class="form-container" style="display: none;">
-            <h2>Регистрация клиента</h2>
+            <h2>Регистрация пользователя</h2>
             <form>
                 <div class="input-box">
                     <input type="text" placeholder="Имя" required>
@@ -80,5 +79,25 @@
             </form>
         </div>
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const adminBtn = document.getElementById("admin-btn");
+    const clientBtn = document.getElementById("client-btn");
+    const adminForm = document.getElementById("admin-form");
+    const clientForm = document.getElementById("client-form");
+  
+    adminBtn.addEventListener("click", function() {
+        adminForm.style.display = "block";
+        clientForm.style.display = "none";
+    });
+  
+    clientBtn.addEventListener("click", function() {
+        adminForm.style.display = "none";
+        clientForm.style.display = "block";
+    });
+  });
+
+    </script>
 </body>
 </html>

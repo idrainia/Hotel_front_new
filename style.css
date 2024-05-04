@@ -247,8 +247,6 @@ h1 {
   border: none;
   font-weight: bold;
   padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 
@@ -678,9 +676,6 @@ footer label {
   font-size: 40px;
 }
 
-.hrooms-preview .preview .fa-times:hover{
-  transform: rotate(90deg);
-}
 
 .hrooms-preview .preview .primary-btn {
   padding: 10px 25px;
@@ -884,4 +879,88 @@ footer label {
 
 /*--------registration---------*/
 
-/*--------error---------*/
+/*--------lk---------*/
+.lk h1{
+  color: #f6bb15;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.lk h2{
+  color: #7fc142;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: serif;
+  font-weight: 400;
+}
+
+.lk .container{
+  max-width: 800px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.lk button {
+  padding: 8px 10px;
+  background-color: #f6bb15;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+
+.edit-form {
+  display: none;
+  margin-top: 20px;
+}
+
+.edit-form input {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width:30%;
+}
+
+.edit-form button {
+  padding: 8px 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.reservation p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.reservation label {
+  margin-right: 20px;
+}
+
+.reservation select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  
+}
+
+.reservation button {
+  background-color: #7fc142;
+}
+
+/*--------lk---------*/

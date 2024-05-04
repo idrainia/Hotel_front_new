@@ -5,16 +5,9 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Номера</title>
-   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">  
-
-   <!-- custom css file link  -->
    <link rel="stylesheet" href="style.css">
-
-   <!-- custom js file link  -->
-   <script src="script.js" defer></script>
-
 </head>
 <body>
 
@@ -306,6 +299,29 @@
    </div>
  </footer>
  <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+ <script>
+   let preveiwContainer = document.querySelector('.hrooms-preview');
+let previewBox = preveiwContainer.querySelectorAll('.preview');
 
+document.querySelectorAll('.hrooms-container .hrooms').forEach(product =>{
+  product.onclick = () =>{
+    preveiwContainer.style.display = 'flex';
+    let name = product.getAttribute('data-name');
+    previewBox.forEach(preview =>{
+      let target = preview.getAttribute('data-target');
+      if(name == target){
+        preview.classList.add('active');
+      }
+    });
+  };
+});
+
+previewBox.forEach(close =>{
+  close.querySelector('.fa-times').onclick = () =>{
+    close.classList.remove('active');
+    preveiwContainer.style.display = 'none';
+  };
+});
+ </script>
 </body>
 </html>

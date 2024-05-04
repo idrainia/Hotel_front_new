@@ -2,35 +2,21 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Личный кабинет</title>
-    <link rel="stylesheet" href="styl.css">
+    <title>Личный кабинет администратора</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class ="lk">
     <div class="container">
         <h1>Личный кабинет</h1>
 
         <div class="profile">
-            <!-- Это место для вставки картинки профиля -->
-            <div class="profile-picture">
-                <img src="profile-pic-placeholder.png" alt="Фото профиля">
-            </div>
-
+            
             <div class="user-info">
-                <h2>Информация о пользователе</h2>
-                <p>Имя: Иван <button onclick="toggleForm('nameForm')">Изменить</button></p>
-                <form id="nameForm" class="edit-form" onsubmit="submitForm(event, 'nameForm')">
-                    <input type="text" placeholder="Новое имя">
-                    <button type="submit">Сохранить</button>
-                </form>
-                
-                <p>Фамилия: Иванов <button onclick="toggleForm('surnameForm')">Изменить</button></п>
-                <form id="surnameForm" class="edit-form" onsubmit="submitForm(event, 'surnameForm')">
-                    <input type="text" placeholder="Новая фамилия">
-                    <button type="submit">Сохранить</button>
-                </form>
+                <p>Имя: Иван</p>
+                <p>Фамилия: Иванов</p>
 
                 <p>Логин: ivanov123</p>
-                <p>Должность: Инженер</п>
+                <p>Должность: Главный администратор</п>
 
                 <p>Телефон: +7 (123) 456-78-90 <button onclick="toggleForm('phoneForm')">Изменить</button></п>
                 <form id="phoneForm" class="edit-form" onsubmit="submitForm(event, 'phoneForm')">
@@ -56,7 +42,7 @@
         </div>
 
         <div class="reservations">
-            <h2>Ваши бронирования</h2>
+            <h2>Текущие бронирования</h2>
             <div class="reservation">
                 <p>Бронь 1</p>
                 <label>
